@@ -10,9 +10,7 @@ const AvoDetail = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const db = new DB()
     const avoId = req.query.id as string
-
     const avo = await db.getById(avoId)
-
     // Notice: We're using Next.JS response helpers here :)
     // https://nextjs.org/docs/api-routes/response-helpers
     res.status(200).json(avo)
