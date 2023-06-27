@@ -1,6 +1,11 @@
-import { useCallback, useState } from "react"
+import { ReactNode, useCallback, useState } from "react"
 import { CounterContext } from "./CounterContext"
-const CounterContextProvider: React.FC=({children})=>{
+
+interface CounterContextProviderProps{
+    children: ReactNode;
+}
+
+const CounterContextProvider: React.FC<CounterContextProviderProps>=({children})=>{
     const [counter, setCounter] = useState(0)
     const increment = useCallback(()=>{
         setCounter((prevCounter)=> prevCounter + 1)
