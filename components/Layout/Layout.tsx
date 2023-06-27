@@ -9,12 +9,12 @@ type Props = {
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div className='h-screen flex flex-col justify-between '>
-      <Navbar className="flex-grow" />
+      <Navbar/>
       <div>
       {children}
       </div>
     
-    <Footer className="flex-grow"/>
+    <Footer />
     </div>
   )
 }

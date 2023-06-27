@@ -19,7 +19,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
 
 
     return (
-        <Card.Group itemsPerRow={4} >
+        <Card.Group itemsPerRow={3} >
             {products.map((product) => (
 
                 <Card key={product.id} >
