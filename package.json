@@ -44,5 +44,8 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged && yarn type-check"
     }
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
