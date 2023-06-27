@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, ChangeEvent } from 'react'
 import { useRouter } from 'next/router'
 import { Image, Input, Button, Icon, Table } from 'semantic-ui-react'
 import { useContext } from 'react'
@@ -34,7 +34,7 @@ const ProductPage = () => {
   const handleCart = () => {
     updateCounter(quanty)
   }
-  const handleChange = (event: object) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuanty(Number(event.target.value))
   }
   return (
