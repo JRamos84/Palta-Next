@@ -1,12 +1,17 @@
 import { IncomingMessage, ServerResponse } from 'http'
 import DB from '@database'
-import enablePublicAccess from '@cors'
+import NextCors from "nextjs-cors";
 
 const allAvos = async (req: IncomingMessage, res: ServerResponse) => {
   try {
     // Generally, you would not want this in your apps.
     // See more in 'cors.js'
-    await enablePublicAccess(req, res)
+    await NextCors(req, res, {
+      // Options
+      methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+      origin: "*",
+      optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    })
 
     const db = new DB()
     const allEntries = await db.getAll()

@@ -1,12 +1,17 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import DB from '@database'
-import enablePublicAccess from '@cors'
+import NextCors from "nextjs-cors";
 
 const AvoDetail = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     // Generally, you would not want this in your apps.
     // See more in 'cors.js'
-    await enablePublicAccess(req, res)
+    await NextCors(req, res, {
+      // Options
+      methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+      origin: "*",
+      optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    });
 
     const db = new DB()
     const avoId = req.query.id as string
