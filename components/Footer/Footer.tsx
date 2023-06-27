@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Footer = props => {
+const Footer = () => {
   return (
     <div className='grid grid-cols-3 mx-12 my-8 mb-6 pb-10  '>
         <div>
