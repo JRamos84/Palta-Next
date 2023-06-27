@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Avocado } from '@components/SVGIcons'
 
-const Header = props => {
+const Header = () => {
   return (
     <div className='flex flex-col items-center mb-9'>
         <div className='flex items-center w-full justify-center'>
